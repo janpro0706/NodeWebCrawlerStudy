@@ -4,19 +4,26 @@
 import assert from 'assert';
 import request from 'request';
 import fs from 'fs';
+import schedule from 'node-schedule';
 
 const API = 'http://api.aoikujira.com/kawase/get.php?code=USD&format=json';
 
-request(API, (err, res, body) => {
-  assert.equal(null, err);
-  assert.equal(200, res.statusCode);
+const getStock = () => {
+  console.log('cron');
 
-  const r = JSON.parse(body);
-  const krw = r['KRW'];
+  request(API, (err, res, body) => {
+    assert.equal(null, err);
+    assert.equal(200, res.statusCode);
 
-  const t = new Date();
-  const fname = `USD_KRW_${t.getFullYear()}-${t.getMonth() + 1}-${t.getDay()}.txt`;
-  const text = `1usd=${krw}krw`;
-  console.log(text);
-  fs.writeFile(fname, text);
-});
+    const r = JSON.parse(body);
+    const krw = r['KRW'];
+
+    const t = new Date();
+    const fname = `USD_KRW_${t.getFullYear()}-${t.getMonth() + 1}-${t.getDay()}.txt`;
+    const text = `1usd=${krw}krw`;
+    console.log(text);
+    fs.writeFile(fname, text);
+  });
+};
+
+const job = schedule.scheduleJob('*/5 * * * * *', getStock);

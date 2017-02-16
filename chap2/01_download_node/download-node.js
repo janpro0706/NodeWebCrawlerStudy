@@ -8,8 +8,6 @@ import fs from 'fs';
 const url = "http://jpub.tistory.com/";
 const savepath = "test.html";
 
-const outfile = fs.createWriteStream(savepath);
-
 const httpGetSync = (url) => {
 	return new Promise((resolve, reject) => {
 		http.get(url, (res) => {
@@ -19,13 +17,13 @@ const httpGetSync = (url) => {
 };
 
 const saveHtml = (res) => {
-	res.pipe(outfile);
+	res.pipe(fs.createWriteStream(savepath));
 	res.on('end', () => {
 		outfile.close();
-		console.log('ok');
+		console.log('end');
 	});
 };
 
-// httpGetSync(url).then(saveHtml);
+httpGetSync(url).then(saveHtml);
 
 // http.get(url, saveHtml);
