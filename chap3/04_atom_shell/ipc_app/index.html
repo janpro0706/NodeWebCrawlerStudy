@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IPC App</title>
+</head>
+<body>
+  <p id="result_async"></p>
+  <p id="result_sync"></p>
+  <script>
+    const electron = require('electron');
+    const { ipcRenderer: ipc } = electron;
+
+    // async comm
+    let [ a, b ] = [ 10, 20 ];
+    ipc.send('mul_async', {a, b});
+    ipc.on('mul_async_res', (event, res) => {
+      const resultElem = document.getElementById('result_async');
+
+      resultElem.innerHTML = res;
+    });
+
+    // sync comm
+    [ a, b ] = [ 5, 10 ];
+    const resultSync = ipc.sendSync('mul_sync', {a, b});
+    const resultElem = document.getElementById('result_sync');
+    resultElem.innerHTML = resultSync;
+  </script>
+</body>
+</html>
