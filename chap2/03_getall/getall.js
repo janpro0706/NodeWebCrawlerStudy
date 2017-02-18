@@ -23,6 +23,7 @@ const downloadRec = (url, level) => {
   client.fetch(url, (err, $, res) => {
     assert.equal(null, err);
 
+    // find <a> tag for next crawling
     $('a').each(function(idx) {
       const href = $(this).attr('href');
       if (!href) return;

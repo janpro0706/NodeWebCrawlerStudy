@@ -1,3 +1,6 @@
+/*
+  로그인이 필요한 경우 mouseEvent 발생, form submit 등 브라우저 엔진의 기능을 사용
+*/
 const casper = require('casper').create({ logLevel: 'debug' });
 
 casper.start();

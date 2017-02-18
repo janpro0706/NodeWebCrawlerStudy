@@ -1,3 +1,6 @@
+/*
+  2. 특정문서의 스크린 캡쳐
+*/
 const casper = require('casper').create();
 
 const TARGET_URL = 'http://jpub.tistory.com';

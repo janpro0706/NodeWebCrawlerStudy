@@ -1,5 +1,5 @@
 /*
-  p78. 기상청으로부터 rss 데이터 취득
+  p78. 기상청으로부터 rss 데이터 취득. 'xml2js' 모듈로 xml 파싱
 */
 import assert from 'assert';
 import { parseString } from 'xml2js';

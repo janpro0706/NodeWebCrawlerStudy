@@ -1,3 +1,6 @@
+/*
+  3. flickr 사이트의 '고양이' 검색 결과 스크린 캡쳐. viewport와 userAgent 등 지정
+*/
 const casper = require('casper').create();
 
 const TARGET_URL = 'https://flickr.com/search/?text=' + encodeURIComponent('고양이');

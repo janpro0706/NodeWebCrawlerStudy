@@ -1,3 +1,6 @@
+/*
+	1. 'electron'을 사용하여 일반 웹 사이트 문서 및 electron html 문서 load
+*/
 const electron = require('electron');
 const { app, BrowserWindow } = electron;
 

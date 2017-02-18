@@ -1,3 +1,6 @@
+/*
+  * ipc 및 executeJavaScript를 사용하여 웹 사이트 스크래핑
+*/
 const electron = require('electron');
 const { app, BrowserWindow, ipcMain: ipc } = electron;
 

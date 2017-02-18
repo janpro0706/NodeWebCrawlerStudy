@@ -1,3 +1,6 @@
+/*
+  2. ipc모듈을 사용하여 메인 - 렌더러 프로세스 간 동기/비동기 통신
+*/
 const electron = require('electron');
 const { app, BrowserWindow, ipcMain: ipc } = electron;
 
