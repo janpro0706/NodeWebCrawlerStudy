@@ -17,7 +17,7 @@ const httpGetSync = (url) => {
 };
 
 const saveHtml = (res) => {
-	res.pipe(fs.createWriteStream(savepath));
+	const outfile = res.pipe(fs.createWriteStream(savepath));
 	res.on('end', () => {
 		outfile.close();
 		console.log('end');
