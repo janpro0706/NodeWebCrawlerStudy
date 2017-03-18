@@ -14,8 +14,13 @@
     "babel-preset-latest": "^6.22.0"
   },
   "dependencies": {
+    "bayes": "0.0.6",
+    "body-parser": "^1.17.1",
     "cheerio": "^0.22.0",
     "cheerio-httpcli": "^0.6.11",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.0",
     "node-schedule": "^1.2.0",
     "request": "^2.79.0",
     "xml2js": "^0.4.17"
