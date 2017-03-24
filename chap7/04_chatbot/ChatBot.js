@@ -11,7 +11,7 @@ const getResponse = async (msg) => {
 
   for (let w of words) {
     const availDict = await Keyword.find({ key: w[0] });
-    const dict = availDict.filter(r => r.pattern == '*' || r.pattern.indexOf(w) > 0);
+    const dict = availDict.filter(r => r.pattern == '*' || msg.indexOf(r.pattern) > 0);
 
     response.push(dict.map(d => d.msg).join(' '));
   }

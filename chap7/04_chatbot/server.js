@@ -47,7 +47,11 @@ app.use(express.static('public'));
 app.post('/message', async (req, res) => {
   const { msg } = req.body;
 
+  console.log(msg);
+
   const resMsg = await ChatBot.talk(msg);
+
+  console.log(resMsg);
   res.status(200).send({ msg: resMsg });
 });
 

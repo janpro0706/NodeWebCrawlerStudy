@@ -1,2 +1,6 @@
-안녕	NNG,*,T,안녕,*,*,*,*
+배고플	VA+ETM,*,T,배고플,Inflect,VA,ETM,배고프/VA/*+ㄹ/ETM/*
+거	NNB,*,F,거,Inflect,NNB,NNB,것/NNB/*
+라고	VCP+EC,*,F,라고,Inflect,VCP,EC,이/VCP/*+라고/EC/*
+생각	NNG,*,T,생각,*,*,*,*
+해	XSV+EC,*,F,해,Inflect,XSV,EC,하/XSV/*+아/EC/*
 EOS
